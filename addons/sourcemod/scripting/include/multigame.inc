@@ -1,5 +1,5 @@
 #if defined _multigame_included
-	#endinput
+  #endinput
 #endif
 #define _multigame_included
 
@@ -38,12 +38,12 @@ methodmap Multigame
 
 public SharedPlugin __pl_multigame =
 {
-	name = "multigame",
-	file = "multigame.smx",
+  name = "multigame",
+  file = "multigame.smx",
 #if defined REQUIRE_PLUGIN
-	required = 1,
+  required = 1,
 #else
-	required = 0,
+  required = 0,
 #endif
 };
 

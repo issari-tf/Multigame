@@ -491,13 +491,13 @@ public void OnMapStart()
   g_iStartingMapTime = g_hCvars.mp_timelimit.IntValue * 60;
   
   // Early timer. Used for Voting
-	CreateTimer(float(g_iStartingMapTime-240), Timer_MenuDisplay, _, TIMER_FLAG_NO_MAPCHANGE);
+  CreateTimer(float(g_iStartingMapTime-240), Timer_MenuDisplay, _, TIMER_FLAG_NO_MAPCHANGE);
 
   // Fallback
   CreateTimer(float(g_iStartingMapTime), Timer_MenuDisplay, _, TIMER_FLAG_NO_MAPCHANGE);
 
   // Set Server name
-	SetServerName();
+  SetServerName();
 }
 
 public void OnMapEnd()
