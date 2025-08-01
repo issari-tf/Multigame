@@ -55,7 +55,7 @@ void Menu_ShowNominationMenu(int client)
       for (int j = 0; j < iMapCount; j++)
       {
         mg.GetMapName(i, j, sMapBuffer, sizeof(sMapBuffer));        
-        aMapList.Push(sMapBuffer);
+        aMapList.PushString(sMapBuffer);
       }
       break;
     }
