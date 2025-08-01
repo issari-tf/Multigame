@@ -417,7 +417,7 @@ public void Handler_GameVoteFinished(Menu hMenu,
 {
   char sSelected[64];
   int iWinningIndex = iItemInfo[0][0];
-  int iVoteCount = iItemInfo[0][1];
+  //int iVoteCount = iItemInfo[0][1];
 
   hMenu.GetItem(iWinningIndex, sSelected, sizeof(sSelected));
   strcopy(g_sGameName[PREVIOUS], MAX_LENGTH, g_sGameName[CURRENT]);
@@ -454,7 +454,7 @@ public void Handler_MapVoteFinished(Menu hMenu,
 {
   char sSelected[64];
   int iWinningIndex = iItemInfo[0][0];
-  int iVoteCount = iItemInfo[0][1];
+  //int iVoteCount = iItemInfo[0][1];
 
   hMenu.GetItem(iWinningIndex, sSelected, sizeof(sSelected));
   strcopy(g_sMapName[PREVIOUS], MAX_LENGTH, g_sMapName[CURRENT]);
