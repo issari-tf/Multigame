@@ -1,0 +1,34 @@
+name: Compile
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        version: ["1.11", "1.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Environments
+        run: |
+          echo "SM_VERSION=${{ matrix.version }}" >> $GITHUB_ENV
+
+      - name: Install
+        run: |
+          bash scripts/install.sh
+
+      - name: Compile plugins
+        run: |
+          cd build/addons/sourcemod/scripting
+          for plugin in multigame multiadmin multinom multivote; do
+            ./spcomp -E "$plugin.sp" -o "../plugins/$plugin.smx"
+          done
